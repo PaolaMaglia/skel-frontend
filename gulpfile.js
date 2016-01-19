@@ -2,11 +2,20 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
-gulp.task('default', function() {
-  // place code for your default task here
+
+var conventionalChangelog = require('gulp-conventional-changelog');
+
+gulp.task('default', function () {
+  return gulp.src('CHANGELOG.md', {
+    buffer: false
+  })
+    .pipe(conventionalChangelog({
+      preset: 'angular'
+    }))
+    .pipe(gulp.dest('./'));
 });
 
-
+//sass
 gulp.task('sass', function () {
   gulp.src('media/sass/**/*.scss')
     .pipe(sass.sync().on('error', sass.logError))

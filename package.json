@@ -12,6 +12,7 @@
     "npm": "1.1.x"
   },
   "devDependencies": {
+    "gulp-conventional-changelog": "^0.7.0",
     "gulp-sass": "^2.1.1"
   }
 }
