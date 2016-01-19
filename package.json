@@ -1,0 +1,16 @@
+{
+  "name": "skel-frontend",
+  "version": "0.0.1",
+  "description": "A base skeleton to start a frontend with Bootstrap 4, gulp and SASS.",
+  "homepage": "http://adostudio.it",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Metalchocobo/skel-frontend"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.1.x"
+  },
+  "devDependencies": {
+  }
+}
