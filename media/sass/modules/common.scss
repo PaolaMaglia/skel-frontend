@@ -3,7 +3,7 @@
  * Common Classes
  *
  ******************************************/
-
+@import '../vendors/bootstrap/bootstrap';
 
 //body
 body{
@@ -37,7 +37,7 @@ a{
 
 //From Bootstrap
 .container{
-  .relative;
+  @extend .relative;
 }
 
 //footer
@@ -51,7 +51,7 @@ footer {
  * Clean Collumns
  * =====================================*/
 .row-clean{
-  .row;
+  @extend .row;
   margin-left:0;
   margin-right:0;
   >.col-xs-1, >.col-sm-1, >.col-md-1, >.col-lg-1,
@@ -143,7 +143,7 @@ footer {
 .s62{ font-size:62px; }
 
 //scss fonts size
-.sX(@x:12){ font-size:@x};
+@mixin sX($x:12){ font-size:$x};
 
 
 //Sometime we need som custom class with different fonts for bold/italic
@@ -191,19 +191,6 @@ etc */
 
 
 
-//square function
-.box-size(@w:false,@h:false){
-  width:@w;
-  height:@w;
-
-  .height() when (ispixel(@h)){
-    height:@h;
-  }
-
-  .height;
-}
-
-
 /* ============================================================================================
  * TABLE RESPONSIVE
  * ============================================================================================
@@ -231,21 +218,21 @@ etc */
 }
 
 //no wrap text
-.no-wrap(@maxWidth:100%){
+@mixin no-wrap($maxWidth:100%){
   overflow: hidden;
   white-space: nowrap;
-  max-width:@maxWidth;
+  max-width:$maxWidth;
   display: inline-block;
 }
 
 
 //After before helper
-.after-before(@width,@height,@posLeft:0,@posTop:0,@position:absolute){
-  width:@width;
-  height:@height;
-  left:@posLeft;
-  top:@posTop;
-  position:@position;
+@mixin after-before($width,$height,$posLeft:0,$posTop:0,$position:absolute){
+  width:$width;
+  height:$height;
+  left:$posLeft;
+  top:$posTop;
+  position:$position;
   display:block;
   content:"";
 }
@@ -302,7 +289,7 @@ img.aligncenter { margin: 10px auto; }
 /* ==============================
  * Responsive
  * ==============================*/
-@media (max-width: @screen-sm-max) {
+@media (max-width: map-get($grid-breakpoints,sm)) {
   .wrapper{
     min-width:0px;
   }
@@ -333,7 +320,7 @@ img.aligncenter { margin: 10px auto; }
 }
 
 
-@media (max-width: @screen-xs-max) {
+@media (max-width: map-get($grid-breakpoints,xs)) {
   .is-phone{
     display:block;
     width:1px;
@@ -345,7 +332,7 @@ img.aligncenter { margin: 10px auto; }
   }
 }
 
-@media (max-width: @screen-xs-max) {
+@media (max-width: map-get($grid-breakpoints,xs)) {
   .phone-hidden{
     display:none!important;
   }
