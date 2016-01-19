@@ -12,5 +12,6 @@
     "npm": "1.1.x"
   },
   "devDependencies": {
+    "gulp-sass": "^2.1.1"
   }
 }

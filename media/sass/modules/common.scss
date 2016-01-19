@@ -1,0 +1,352 @@
+/*******************************************
+ *
+ * Common Classes
+ *
+ ******************************************/
+
+
+//body
+body{
+
+}
+
+//headers
+h1,h2,h3{
+
+}
+
+//Common links
+a{
+  text-decoration: underline;
+  &:hover{
+    text-decoration:none;
+  }
+}
+
+//Common Wrapper
+.wrapper{
+  width:100%;
+  position:relative;
+  max-width:100%;
+}
+
+//Wapper full width
+.wrapper-fullwidth{
+
+}
+
+//From Bootstrap
+.container{
+  .relative;
+}
+
+//footer
+footer {
+
+}
+
+
+
+/* =====================================
+ * Clean Collumns
+ * =====================================*/
+.row-clean{
+  .row;
+  margin-left:0;
+  margin-right:0;
+  >.col-xs-1, >.col-sm-1, >.col-md-1, >.col-lg-1,
+  >.col-xs-2, >.col-sm-2, >.col-md-2, >.col-lg-2,
+  >.col-xs-3, >.col-sm-3, >.col-md-3, >.col-lg-3,
+  >.col-xs-4, >.col-sm-4, >.col-md-4, >.col-lg-4,
+  >.col-xs-5, >.col-sm-5, >.col-md-5, >.col-lg-5,
+  >.col-xs-6, >.col-sm-6, >.col-md-6, >.col-lg-6,
+  >.col-xs-7, >.col-sm-7, >.col-md-7, >.col-lg-7,
+  >.col-xs-8, >.col-sm-8, >.col-md-8, >.col-lg-8,
+  >.col-xs-9, >.col-sm-9, >.col-md-9, >.col-lg-9,
+  >.col-xs-10, >.col-sm-10, >.col-md-10, >.col-lg-10,
+  >.col-xs-11, >.col-sm-11, >.col-md-11, >.col-lg-11,
+  >.col-xs-12, >.col-sm-12, >.col-md-12, >.col-lg-12{
+    padding-left:0;
+    padding-right:0;
+  }
+}
+
+
+/* =====================================
+ * Table Collumns (width height:100%)
+ * =====================================*/
+.row-table{
+  display: table;
+  width: 100%;
+  &:after,&:before {
+    display:none!important;
+  }
+  .td{
+    display:table-cell;
+    float:none;
+    position:relative;
+  }
+}
+
+//quando si implementa questa struttura, bisogna indicare quando in mobile cessa di esistere
+//questa classe è da applicare in mobile quando si vuole rimuovere rimuovere l'effetto tabella
+//chiedere ad @ado per delucidazioni
+.remove-table,.no-table{
+  display:block;
+  &.row:after,&.row:before,&.row-clean:after,&.row-clean:before{
+    display:block;
+  }
+  .td{
+    display:block;
+    float: inherit;
+    position:inherit;
+  }
+}
+
+
+/* =====================================
+ * FONTS
+ * =====================================*/
+//Html classes
+.s11{ font-size:11px; }
+.s12{ font-size:12px; }
+.s13{ font-size:13px; }
+.s14{ font-size:14px; }
+.s15{ font-size:15px; }
+.s16{ font-size:16px; }
+.s17{ font-size:17px; }
+.s18{ font-size:18px; }
+.s19{ font-size:19px; }
+.s20{ font-size:20px; }
+.s21{ font-size:21px; }
+.s22{ font-size:22px; }
+.s23{ font-size:23px; }
+.s24{ font-size:24px; }
+.s26{ font-size:26px; }
+.s27{ font-size:27px; }
+.s28{ font-size:28px; }
+.s30{ font-size:30px; }
+.s31{ font-size:31px; }
+.s32{ font-size:32px; }
+.s34{ font-size:34px; }
+.s36{ font-size:36px; }
+.s37{ font-size:37px; }
+.s38{ font-size:38px; }
+.s40{ font-size:40px; }
+.s42{ font-size:42px; }
+.s44{ font-size:44px; }
+.s47{ font-size:47px; }
+.s49{ font-size:49px; }
+.s52{ font-size:52px; }
+.s58{ font-size:58px; }
+.s60{ font-size:60px; }
+.s62{ font-size:62px; }
+
+//scss fonts size
+.sX(@x:12){ font-size:@x};
+
+
+//Sometime we need som custom class with different fonts for bold/italic
+.f-regular{
+
+}
+.f-italic{
+
+}
+.f-thin{
+
+}
+.f-thin-italic{
+
+}
+.f-bold{
+
+}
+.f-bold-italic{
+
+}
+.f-black{
+
+}
+
+.f-upper,.uppercase     { text-transform: uppercase; }
+.f-lowercase,.lowercase { text-transform: lowercase; }
+
+
+/*******************************************
+ * Texts colors
+ ******************************************/
+/* .f-blue,.c-blue  { color: @brand-blue; }
+.f-red,.c-red   { color: @brand-red;
+
+etc.. */
+
+
+/*******************************************
+ * Backgorunds colors
+ ******************************************/
+/* .bg-blue  { background-color: @brand-blue; }
+.bg-red   { background-color: @brand-red;
+etc */
+
+
+
+//square function
+.box-size(@w:false,@h:false){
+  width:@w;
+  height:@w;
+
+  .height() when (ispixel(@h)){
+    height:@h;
+  }
+
+  .height;
+}
+
+
+/* ============================================================================================
+ * TABLE RESPONSIVE
+ * ============================================================================================
+ */
+@-moz-document url-prefix() {
+  fieldset { display: table-cell; }
+}
+
+
+/* ============================================================================================
+ * HELPERS
+ * ============================================================================================
+ */
+
+
+//reset ul
+.reset-ul{
+  margin:0;
+  padding:0;
+  >li{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+}
+
+//no wrap text
+.no-wrap(@maxWidth:100%){
+  overflow: hidden;
+  white-space: nowrap;
+  max-width:@maxWidth;
+  display: inline-block;
+}
+
+
+//After before helper
+.after-before(@width,@height,@posLeft:0,@posTop:0,@position:absolute){
+  width:@width;
+  height:@height;
+  left:@posLeft;
+  top:@posTop;
+  position:@position;
+  display:block;
+  content:"";
+}
+
+.no-padding     { padding: 0px; }
+
+.alignright     { text-align: right; }
+.alignleft      { text-align: left; }
+.aligncenter    { text-align: center; }
+.alignjustify   { text-align: justify; }
+.left           { float: left; }
+.right          { float: right; }
+.center         { margin: 0 auto; position: relative; }
+.hidden,.hide   { display: none; }
+
+img.alignright  { float: right; margin: 10px 0px 10px 10px; }
+img.alignleft   { float: left; margin: 10px 10px 10px 0; }
+img.aligncenter { margin: 10px auto; }
+
+.absolute       { position: absolute; }
+.relative       { position: relative; }
+.fixed          { position: fixed; }
+.block          { display: block; }
+.inline-block   { display: inline-block; }
+
+//vertical align
+.content-v-center{
+  &:before{
+    content: '';
+    display:inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: -0.25em;
+  }
+  >*{
+    vertical-align:middle;
+    display:inline-block;
+    width:100%;
+  }
+}
+
+
+.is-mobile,.is-phone{
+  display:none;
+}
+
+.desktop-hidden{
+  display:none;
+}
+
+
+
+
+/* ==============================
+ * Responsive
+ * ==============================*/
+@media (max-width: @screen-sm-max) {
+  .wrapper{
+    min-width:0px;
+  }
+
+  .table-responsive{
+    border:0;
+    //box-shadow: inset -6px 0 6px rgba(0,0,0,0.12);
+  }
+
+  .is-mobile{
+    display:block;
+    width:1px;
+    height:1px;
+    top:0;
+    left:0;
+    position:absolute;
+    z-index:-1;
+  }
+
+  .mobile-hidden{
+    display:none!important;
+  }
+
+  .desktop-hidden{
+    display:initial;
+  }
+
+}
+
+
+@media (max-width: @screen-xs-max) {
+  .is-phone{
+    display:block;
+    width:1px;
+    height:1px;
+    top:0;
+    left:0;
+    position:absolute;
+    z-index:-1;
+  }
+}
+
+@media (max-width: @screen-xs-max) {
+  .phone-hidden{
+    display:none!important;
+  }
+}
