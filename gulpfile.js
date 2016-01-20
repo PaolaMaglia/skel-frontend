@@ -1,7 +1,7 @@
 // Load gulp plugins with 'require' function of nodejs
 
 var __config={
-	source_sass:["media/sass/**/*.scss"],
+	source_sass:["media/sass/*.scss"],
 	//you can set files ordered
 	source_js:["media/js/*.js"],
 	assets_js:"assets/js",
